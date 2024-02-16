@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Movie Explorer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <!-- <--//Navbar:--> 
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+         
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="movielist.html" target="_blank">My Movie Lists</a>
+              </li>
+              
+            </ul>
+            <div class="d-flex">
+                
+             
+              <input class="form-control me-2" list="datalistOptions"  onkeypress="suggested(event)" type="text" name="moviename" id="exampleDataList" placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                  
+                </datalist> 
+              
+              <button class="btn btn-outline btn-dark" type="submit" onclick="Search()" onkeydown="suggested(event)">Search</button> 
+            </div>
+            
+        </div>
+        </div>
+       
+    
+   </nav>
+     
+    <!-- Body-group -->
+     <!-- If there is a content in the search -->
+    <div class="d-grid gap-4 mt-4 container" id="parent-body">
+        
+         <!-- HTML body DOM Structure blue print -->
+        <!-- <div class="row ">
+          <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Title</li>
+                  <li class="list-group-item">Year of Release</li>
+                  <li class="list-group-item">Type</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <button class="btn btn-dark ms-5">Favorite</button>
+                </div>
+              </div>
+          </div>
+          <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">An item</li>
+                  <li class="list-group-item">A second item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <button class="btn btn-dark ms-5">Favorite</button>
+                  
+                </div>
+              </div>
+          </div>
+          <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">An item</li>
+                  <li class="list-group-item">A second item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <button class="btn btn-dark ms-5">Favorite</button>
+                  
+                </div>
+              </div>
+          </div>
+
+         
+        </div>
+        <div class="row">
+            <div class="col-4">
+              <div class="card" style="width: 18rem;">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                  </ul>
+                  <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <button class="btn btn-dark ms-5">Favorite</button>
+                  </div>
+                </div>
+            </div>
+            <div class="col-4">
+              <div class="card" style="width: 18rem;">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                  </ul>
+                  <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <button class="btn btn-dark ms-5">Favorite</button>
+                  </div>
+                </div>
+            </div>
+            <div class="col-4">
+              <div class="card" style="width: 18rem;">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                  </ul>
+                  <div class="card-body"><a href="#" class="card-link "hidden='hidden'>Card link</a></div>
+                  <div class="card-body">
+                    <a href="#" class="card-link btn btn-dark">Card link</a>
+                    
+                    <button class="btn btn-dark ms-5">Favorite</button>
+                  </div>
+                </div>
+            </div>
+          </div> -->
+          
+        
+      </div>
+    
+    <!-- if any link is clicked -->
+    
+    <footer class="bd-footer py-3 mt-5 bg-light " style="text-align: center;">
+        
+            <h3> Hey !! How are You?   Ready for Treasure Hunt </h3>
+       
+        
+    </footer>
+
+
+
+
+
+
+    <script src="index.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+</body>
+</html>

@@ -1,0 +1,5 @@
+.d-flex#item-list  {
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
